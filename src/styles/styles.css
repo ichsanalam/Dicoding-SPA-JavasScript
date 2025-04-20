@@ -1,0 +1,241 @@
+:root {
+  --primary-color: #d97706;
+  --primary-text-color: #ffffff;
+  --primary-hover-color: #b66200;
+  --primary-shadow-color: #d9770699;
+
+  --secondary-color: #6c757d;
+  --secondary-text-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  padding-inline: 32px;
+  margin-inline: auto;
+  max-width: 1300px;
+}
+
+header {
+  background-color: lightskyblue;
+}
+
+.main-header {
+  min-height: 90px;
+  padding-block: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.brand-name {
+  font-size: 1.125rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.navigation-drawer {
+  min-height: 100vh;
+  width: 200px;
+  padding: 20px 10px;
+  background-color: #fff;
+
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+
+  box-shadow: 0 0 4px 2px #00000033;
+  transform: translateX(-100%);
+  transition: transform 350ms;
+
+  z-index: 9999;
+}
+
+.navigation-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-button {
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+
+  display: inline-block;
+  background-color: transparent;
+
+  font-weight: bold;
+  font-size: 28px;
+  color: #141e16;
+
+  cursor: pointer;
+}
+
+.nav-list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px 20px;
+}
+
+.nav-list li a {
+  padding: 6px 10px;
+
+  display: block;
+  
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-list li a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN */
+.main-content {
+  padding-block: 20px;
+}
+
+/* LOGIN, REGISTER PAGE */
+.register-form-container,
+.login-form-container {
+  max-width: 400px;
+  height: 100%;
+  margin-inline: auto;
+}
+
+.register__title,
+.login__title {
+  text-align: center;
+  margin-block: 30px 20px;
+}
+
+.register-form,
+.login-form {
+  border-radius: 8px;
+  padding: 40px;
+}
+
+.register-form__form-buttons,
+.login-form__form-buttons {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.register-form__already-have-account,
+.login-form__do-not-have-account {
+  text-align: center;
+}
+/* END OF LOGIN, REGISTER PAGE */
+
+/* START OF FORM CONTROL */
+.btn {
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  padding: 10px 20px;
+  border: 1px solid var(--primary-color);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--primary-text-color) !important;
+
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+a,
+button {
+  min-height: 44px;
+  min-width: 44px;
+
+  color: var(--primary-color);
+}
+
+input,
+textarea {
+  min-height: 44px;
+  min-width: 44px;
+  width: 100%;
+  padding: 12px 10px;
+  border-radius: 4px;
+  border: 1px solid #d4d4d4;
+
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+
+  resize: vertical;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--primary-shadow-color);
+}
+
+form > .form-control:not([hidden]) ~ .form-control:not([hidden]) {
+  margin-block-start: 30px;
+}
+
+form .form-control > :not([hidden]) ~ :not([hidden]) {
+  margin-block-start: 10px;
+}
+
+form .form-buttons {
+  margin-block-start: 30px;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+}
+/* END OF FORM CONTROL */
+
+/* Write your styles more here */
+
+@media screen and (width > 1000px) {
+  .navigation-drawer {
+    min-height: auto;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    position: static;
+    box-shadow: none;
+    transform: translateX(0);
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .nav-list li a {
+    display: inline-block;
+  }
+
+  .drawer-button {
+    display: none;
+  }
+}

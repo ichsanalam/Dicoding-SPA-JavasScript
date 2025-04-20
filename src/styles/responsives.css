@@ -1,0 +1,8 @@
+@media screen and (width > 600px) {
+    /* MAIN */
+  /* LOGIN & REGISTER */
+  .register-form,
+  .login-form {
+    border: 1px solid #d4d4d4;
+  }
+}
