@@ -1,8 +1,44 @@
 @media screen and (width > 600px) {
-    /* MAIN */
+  form .form-buttons {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* MAIN */
   /* LOGIN & REGISTER */
   .register-form,
   .login-form {
     border: 1px solid #d4d4d4;
   }
+}
+
+@media screen and (width > 800px) {}
+
+@media screen and (width > 1000px) {
+  .navigation-drawer {
+    min-height: auto;
+    width: 100%;
+    padding: 0;
+    background-color: transparent;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    position: static;
+    box-shadow: none;
+    transform: translateX(0);
+  }
+
+  .navigation-drawer__nav-list,
+  .navigation-drawer__nav-list-main {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  .drawer-button {
+    display: none;
+  }
+
 }

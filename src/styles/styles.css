@@ -25,8 +25,16 @@ body {
   max-width: 1300px;
 }
 
+/* START HEADER */
 header {
-  background-color: lightskyblue;
+  background-color: #ffffff;
+
+  position: sticky;
+  inset-block-start: 0;
+  box-shadow: 0 1px 4px 0 #00000055;
+  z-index: 9999;
+
+  view-transition-name: header;
 }
 
 .main-header {
@@ -36,21 +44,28 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
+  gap: 100px;
 }
 
 .brand-name {
-  font-size: 1.125rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 1.3rem;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: #141e16;
 }
 
 .navigation-drawer {
   min-height: 100vh;
-  width: 200px;
+  width: 100%;
   padding: 20px 10px;
   background-color: #fff;
+
+  display: flex;
+  gap: 20px;
 
   position: fixed;
   inset-block-start: 0;
@@ -82,31 +97,53 @@ header {
   cursor: pointer;
 }
 
-.nav-list {
+.navigation-drawer__nav-list,
+.navigation-drawer__nav-list-main {
   list-style: none;
-
   display: flex;
   flex-direction: column;
-  gap: 10px 20px;
+  gap: 10px;
 }
 
-.nav-list li a {
+.navigation-drawer__nav-list li a,
+.navigation-drawer__nav-list-main li a {
+  width: 100%;
   padding: 6px 10px;
 
-  display: block;
-  
-  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
   text-decoration: none;
+  font-weight: 600;
 }
+
+.navigation-drawer__nav-list-main li a {
+  color: #5d5d5d;
+}
+
+
 
 .nav-list li a:hover {
   text-decoration: underline;
 }
 
-/* MAIN */
-.main-content {
-  padding-block: 20px;
+.logout-button {
+  color: #ff0000;
 }
+/* END HEADER */
+
+
+
+/* MAIN */
+.main-content .title {
+  text-align: center;
+  font-size: 2.5rem;
+  padding-block: 50px 40px;
+}
+
+
+
 
 /* LOGIN, REGISTER PAGE */
 .register-form-container,
@@ -138,6 +175,7 @@ header {
 .login-form__do-not-have-account {
   text-align: center;
 }
+
 /* END OF LOGIN, REGISTER PAGE */
 
 /* START OF FORM CONTROL */
@@ -192,11 +230,11 @@ select:focus-visible,
   box-shadow: 0 0 0 4px var(--primary-shadow-color);
 }
 
-form > .form-control:not([hidden]) ~ .form-control:not([hidden]) {
+form>.form-control:not([hidden])~.form-control:not([hidden]) {
   margin-block-start: 30px;
 }
 
-form .form-control > :not([hidden]) ~ :not([hidden]) {
+form .form-control> :not([hidden])~ :not([hidden]) {
   margin-block-start: 10px;
 }
 
@@ -208,34 +246,7 @@ form .form-buttons {
   flex-direction: column;
   gap: 10px;
 }
+
 /* END OF FORM CONTROL */
 
 /* Write your styles more here */
-
-@media screen and (width > 1000px) {
-  .navigation-drawer {
-    min-height: auto;
-    width: auto;
-    padding: 0;
-    background-color: transparent;
-
-    flex-direction: row;
-    justify-content: space-between;
-
-    position: static;
-    box-shadow: none;
-    transform: translateX(0);
-  }
-
-  .nav-list {
-    flex-direction: row;
-  }
-
-  .nav-list li a {
-    display: inline-block;
-  }
-
-  .drawer-button {
-    display: none;
-  }
-}
