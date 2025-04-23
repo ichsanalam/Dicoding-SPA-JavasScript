@@ -135,7 +135,7 @@ header {
 
 
 
-/* MAIN */
+/* START MAIN */
 .main-content .title {
   text-align: center;
   font-size: 2.5rem;
@@ -175,8 +175,98 @@ header {
 .login-form__do-not-have-account {
   text-align: center;
 }
-
 /* END OF LOGIN, REGISTER PAGE */
+
+
+
+/* START HOME PAGE */
+/* story list */
+.story-list__container {
+  min-height: 400px;
+}
+
+.story-list {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
+  gap: 20px 15px;
+}
+
+.story-list__empty,
+.story-list__error {
+  text-align: center;
+}
+
+.story-item {
+  border-radius: 12px;
+  border: 1px solid #d4d4d4;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.story-item__image {
+  display: block;
+  width: 100%;
+  height: 250px;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.story-item__body {
+  padding: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.story-item__main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.story-item__more-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+
+  color: #5d5d5d;
+}
+
+.story-item__createdat,
+.story-item__location,
+.story-item__author {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.story-item__description {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.story-item__read-more {
+  justify-self: start;
+  display: inline-flex;
+  gap: 5px;
+
+  background-color: var(--primary-color);
+  color: var(--primary-text-color);
+}
+/* story list */
+/* END HOME PAGE */
+
+
+
+/* END MAIN */
+
+
 
 /* START OF FORM CONTROL */
 .btn {

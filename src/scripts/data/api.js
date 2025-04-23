@@ -1,4 +1,5 @@
 import { BASE_URL } from '../config';
+import { getAccessToken } from '../utils/auth';
 
 const ENDPOINTS = {
   // auth
@@ -41,9 +42,20 @@ export async function getLogin({ email, password }) {
   };
 }
 
+export async function getAllStories() {
+  const token = getAccessToken();
+  console.log("Token yang digunakan:", token);
 
+  const fetchResponse = await fetch(ENDPOINTS.STORY_LIST, {
+    method: 'GET',
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+  const json = await fetchResponse.json();
 
-async function getData() {
-  const fetchResponse = await fetch(ENDPOINTS.STORY_LIST);
-  return await fetchResponse.json();
+  return {
+    ...json,
+    ok: fetchResponse.ok,
+  };
 }

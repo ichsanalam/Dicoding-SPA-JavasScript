@@ -75,14 +75,10 @@ class App {
   async renderPage() {
     // Mendapatkan path dari URL aktif.
     const url = getActiveRoute();
-    console.log(url);
     // Mengambil halaman dari objek routes berdasarkan path tersebut.
     const route = routes[url];
-    console.log(route);
     // Get page instance
     const page = route();
-
-    console.log(page);
 
     // ngerender page berdasarkan route
     const transition = transitionHelper({

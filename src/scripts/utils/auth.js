@@ -1,7 +1,6 @@
 import { getActiveRoute } from '../routes/url-parser';
 import { ACCESS_TOKEN_KEY } from '../../scripts/config';
 
-console.log('token: ' + ACCESS_TOKEN_KEY);
 // Mengambil token dari localStorage
 export function getAccessToken() {
   try {
@@ -61,8 +60,6 @@ export function checkUnauthenticatedRouteOnly(page) {
 export function checkAuthenticatedRoute(page) {
   const isLogin = !!getAccessToken();
   const test = getAccessToken();
-  console.log('token2: ' + test);
-  console.log(isLogin);
 
   if (!isLogin) {
     location.hash = '/login';
